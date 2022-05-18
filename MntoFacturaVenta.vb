@@ -5264,7 +5264,7 @@ Public Class MntoFacturaVenta
 
     Private Sub MntoFacturaVenta_RecordUpdated(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.RecordUpdated
         mblnValidatingClte = False
-        CalcularOrdenFact()
+
         ComprobarRiesgoCliente()
         TabFacturas_Click(TabFacturas, New EventArgs)
         chkVencimientoManual.Enabled = True
@@ -5273,6 +5273,7 @@ Public Class MntoFacturaVenta
         DesglosarImporteLineas()
         LoadGridDefaultValues()
         calcularFacturadoAnteriormente()
+        CalcularOrdenFact()
     End Sub
 
     Private Sub MntoFacturaVenta_RecordAdding(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.RecordAdding
@@ -6600,7 +6601,7 @@ Public Class MntoFacturaVenta
         Next
 
         txtNFacturaOrden.Text = nfactorden
-        'Me.UpdateData(False)
+        Me.UpdateData()
 
     End Sub
 
