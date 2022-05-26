@@ -50,3 +50,22 @@ C:\FUENTES EXPERTIS 5 R2\ApplicationSergio\Expertis.Application.ERP.FacturaVenta
 C:\FUENTES EXPERTIS 5 R2\ApplicationSergio\Expertis.Application.ERP.FacturaVenta\obj\Release\Expertis.Application.ERP.FacturaVenta.dll.licenses
 C:\FUENTES EXPERTIS 5 R2\ApplicationSergio\Expertis.Application.ERP.FacturaVenta\obj\Release\Expertis.Application.ERP.FacturaVenta.dll
 C:\FUENTES EXPERTIS 5 R2\ApplicationSergio\Expertis.Application.ERP.FacturaVenta\obj\Release\Expertis.Application.ERP.FacturaVenta.pdb
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\ExpertisNet50R2test\Bin\Expertis.Application.ERP.FacturaVenta.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\ExpertisNet50R2test\Bin\Expertis.Application.ERP.FacturaVenta.pdb
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\ResolveAssemblyReference.cache
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Solmicro.Expertis.Application.ERP.FacturaVenta.MntoOficinaContable.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Solmicro.Expertis.Application.ERP.FacturaVenta.MntoOrganoGestor.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Solmicro.Expertis.Application.ERP.FacturaVenta.MntoUnidadTramitadora.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Solmicro.Expertis.Application.ERP.FacturaVenta.CIFactVenta.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Solmicro.Expertis.Application.ERP.FacturaVenta.CIFactVentaAsegurar.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Solmicro.Expertis.Application.ERP.FacturaVenta.CIFactVentaGestorCobros.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Solmicro.Expertis.Application.ERP.FacturaVenta.frmComunicarGestorCobro.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Solmicro.Expertis.Application.ERP.FacturaVenta.frmDescontabilizar.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Solmicro.Expertis.Application.ERP.FacturaVenta.FrmImprimirDocs.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Solmicro.Expertis.Application.ERP.FacturaVenta.frmLogos.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Solmicro.Expertis.Application.ERP.FacturaVenta.MntoFacturaVenta.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Solmicro.Expertis.Application.ERP.FacturaVenta.Resources.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Expertis.Application.ERP.FacturaVenta.vbproj.GenerateResource.Cache
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Expertis.Application.ERP.FacturaVenta.dll.licenses
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Expertis.Application.ERP.FacturaVenta.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.FacturaVenta\obj\Release\Expertis.Application.ERP.FacturaVenta.pdb

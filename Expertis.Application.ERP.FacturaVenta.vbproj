@@ -77,7 +77,7 @@
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\..\..\ExpertisNet50R2test\Bin\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\..\..\ExpertisNet50R2test\Bin\</OutputPath>
     <DocumentationFile>
     </DocumentationFile>
     <BaseAddress>285212672</BaseAddress>

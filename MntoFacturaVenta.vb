@@ -5500,8 +5500,12 @@ Public Class MntoFacturaVenta
                         Case "SeguimientoTarifa"
                             e.Column.ButtonStyle = Janus.Windows.GridEX.ButtonStyle.Ellipsis
                             e.Cancel = True
-                        Case "Importe", "IDPedido", "IDAlbaran"
+                        Case "IDPedido", "IDAlbaran"
                             e.Cancel = True
+                            'David Velasco 26/05/2022
+                        Case "Importe"
+                            e.Cancel = False
+                            'FIN ---- David Velasco 26/05/2022
                         Case "Dto", "DtoProntoPago"
                             e.Cancel = Nz(.Value("Especial"), 0)
                         Case "IDUDInterna", "IDUDInterna2"
