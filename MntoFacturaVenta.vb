@@ -6170,7 +6170,66 @@ Public Class MntoFacturaVenta
         Select Case e.Alias
             Case "FACTCERTDES", "FACTCERTSIMP"
                 e.Filter.Add("IDFactura", FilterOperator.Equal, Me.CurrentRow("IDFactura"))
+            Case "INFHORASFECHA"
+                generarInformeHorasFechas()
+                e.Cancel = True
         End Select
+    End Sub
+    Private Sub generarInformeHorasFechas()
+        Try
+            'Dim rcsempresa As DataTable = AdminData.GetData("select descEmpresa from tbDatosEmpresa", False)
+            Dim filtro1 As New Filter
+
+            Dim rcsempresa As DataTable = New BE.DataEngine().Filter("tbDatosEmpresa", filtro1, "descEmpresa")
+            Dim empresa As String
+            If rcsempresa.Rows.Count > 0 Then
+                empresa = CStr(rcsempresa.Rows(0)("DescEmpresa"))
+            End If
+
+            Dim frm As New frmInformeFecha
+            frm.ShowDialog()
+            Dim fDesde As Date = frm.fecha1
+            Dim fHasta As Date = frm.fecha2
+            Dim dtObras As DataTable = frm.dtObrasSelect
+            Dim strWhere As String = ""
+            Dim nfilas As Integer = dtObras.Rows.Count
+            Dim i As Integer = 0
+            If dtObras.Rows.Count > 0 Then
+                strWhere = " dbo.tbObraCabecera.NObra in ("
+                For Each row As DataRow In dtObras.Rows
+                    i = i + 1
+
+                    If i = nfilas Then
+                        strWhere &= "'" & row("NObra").ToString & "'"
+                    Else
+                        strWhere &= "'" & row("NObra").ToString & "',"
+                    End If
+
+                Next
+                strWhere &= " ) and "
+
+            End If
+
+            Dim rp As New Report("INFHORASFECHA")
+
+            Dim strSelect As String = "SELECT TOP 100 PERCENT dbo.tbObraMODControl.IDObra, dbo.tbObraCabecera.NObra, dbo.tbObraCabecera.DescObra, "
+            strSelect &= " SUM(dbo.tbObraMODControl.HorasRealMod) AS HorasTrabajadas, COUNT(dbo.tbObraMODControl.FechaInicio) AS JornadasTrabajadas"
+            strSelect &= " FROM dbo.tbObraMODControl INNER JOIN dbo.tbObraCabecera ON dbo.tbObraMODControl.IDObra = dbo.tbObraCabecera.IDObra"
+            strSelect &= " WHERE " & strWhere & " dbo.tbObraMODControl.FechaInicio between '" & fDesde & "' and '" & fHasta & "'"
+            strSelect &= " GROUP BY dbo.tbObraMODControl.IDObra, dbo.tbObraCabecera.NObra, dbo.tbObraCabecera.DescObra"
+            strSelect &= " ORDER BY dbo.tbObraCabecera.NObra"
+            Dim filtro As New Filter
+            rp.DataSource = New BE.DataEngine().Filter(strSelect, filtro)
+
+            'rp.DataSource = AdminData.GetData(strSelect, False)
+            rp.Formulas("fdesde").Text = Format(fDesde, "dd/MM/yyyy")
+            rp.Formulas("fhasta").Text = Format(fHasta, "dd/MM/yyyy")
+            rp.Formulas("DescEmpresa").Text = empresa
+
+            ExpertisApp.OpenReport(rp)
+        Catch e As Exception
+            MsgBox(e.Message)
+        End Try
     End Sub
 
     Private Sub MntoFacturaVenta_SetReportDataSource(ByVal sender As Object, ByVal e As Engine.UI.ReportDataSourceEventArgs) Handles MyBase.SetReportDataSource
