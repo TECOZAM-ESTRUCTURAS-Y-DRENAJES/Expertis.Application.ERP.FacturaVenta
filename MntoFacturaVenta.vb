@@ -672,8 +672,6 @@ Public Class MntoFacturaVenta
         Me.lbIDContador = New Solmicro.Expertis.Engine.UI.Label
         Me.fwiFecVencimiento = New Solmicro.Expertis.Engine.UI.CalendarBox
         Me.fraImportesFactura = New Solmicro.Expertis.Engine.UI.Frame
-        Me.txtNFacturaOrden = New Solmicro.Expertis.Engine.UI.TextBox
-        Me.lblNFacturaOrden = New Solmicro.Expertis.Engine.UI.Label
         Me.ntbFacturadoAnteriormente = New Solmicro.Expertis.Engine.UI.NumericTextBox
         Me.lblFacturadoAnteriormente = New Solmicro.Expertis.Engine.UI.Label
         Me.ntbFactAntPS = New Solmicro.Expertis.Engine.UI.NumericTextBox
@@ -691,6 +689,8 @@ Public Class MntoFacturaVenta
         Me.lblTotalIva = New Solmicro.Expertis.Engine.UI.Label
         Me.fwiTotalBaseImp = New Solmicro.Expertis.Engine.UI.NumericTextBox
         Me.fwiTotalIva = New Solmicro.Expertis.Engine.UI.NumericTextBox
+        Me.txtNFacturaOrden = New Solmicro.Expertis.Engine.UI.TextBox
+        Me.lblNFacturaOrden = New Solmicro.Expertis.Engine.UI.Label
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolTipMensajes = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel4 = New Solmicro.Expertis.Engine.UI.Panel
@@ -4056,25 +4056,6 @@ Public Class MntoFacturaVenta
         Me.fraImportesFactura.TabStop = False
         Me.fraImportesFactura.Text = "Importes"
         '
-        'txtNFacturaOrden
-        '
-        Me.TryDataBinding(txtNFacturaOrden, New System.Windows.Forms.Binding("Text", Me, "NFacturaOrden", True))
-        Me.txtNFacturaOrden.DisabledBackColor = System.Drawing.Color.White
-        Me.txtNFacturaOrden.Location = New System.Drawing.Point(156, 26)
-        Me.txtNFacturaOrden.Name = "txtNFacturaOrden"
-        Me.txtNFacturaOrden.Size = New System.Drawing.Size(121, 21)
-        Me.txtNFacturaOrden.TabIndex = 174
-        Me.txtNFacturaOrden.Visible = False
-        '
-        'lblNFacturaOrden
-        '
-        Me.lblNFacturaOrden.Location = New System.Drawing.Point(59, 30)
-        Me.lblNFacturaOrden.Name = "lblNFacturaOrden"
-        Me.lblNFacturaOrden.Size = New System.Drawing.Size(91, 13)
-        Me.lblNFacturaOrden.TabIndex = 175
-        Me.lblNFacturaOrden.Text = "NFacturaOrden"
-        Me.lblNFacturaOrden.Visible = False
-        '
         'ntbFacturadoAnteriormente
         '
         Me.TryDataBinding(ntbFacturadoAnteriormente, New System.Windows.Forms.Binding("Value", Me, "FacturadoAnteriormente", True))
@@ -4229,6 +4210,24 @@ Public Class MntoFacturaVenta
         Me.fwiTotalIva.Name = "fwiTotalIva"
         Me.fwiTotalIva.Size = New System.Drawing.Size(57, 21)
         Me.fwiTotalIva.TabIndex = 126
+        '
+        'txtNFacturaOrden
+        '
+        Me.TryDataBinding(txtNFacturaOrden, New System.Windows.Forms.Binding("Text", Me, "NFacturaOrden", True))
+        Me.txtNFacturaOrden.DisabledBackColor = System.Drawing.Color.White
+        Me.txtNFacturaOrden.Location = New System.Drawing.Point(156, 26)
+        Me.txtNFacturaOrden.Name = "txtNFacturaOrden"
+        Me.txtNFacturaOrden.Size = New System.Drawing.Size(121, 21)
+        Me.txtNFacturaOrden.TabIndex = 174
+        '
+        'lblNFacturaOrden
+        '
+        Me.lblNFacturaOrden.Location = New System.Drawing.Point(59, 30)
+        Me.lblNFacturaOrden.Name = "lblNFacturaOrden"
+        Me.lblNFacturaOrden.Size = New System.Drawing.Size(91, 13)
+        Me.lblNFacturaOrden.TabIndex = 175
+        Me.lblNFacturaOrden.Text = "NFacturaOrden"
+        Me.lblNFacturaOrden.Visible = False
         '
         'ErrorProvider1
         '
