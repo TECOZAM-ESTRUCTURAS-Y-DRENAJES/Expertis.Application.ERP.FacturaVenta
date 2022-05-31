@@ -4031,8 +4031,6 @@ Public Class MntoFacturaVenta
         '
         'fraImportesFactura
         '
-        Me.fraImportesFactura.Controls.Add(Me.txtNFacturaOrden)
-        Me.fraImportesFactura.Controls.Add(Me.lblNFacturaOrden)
         Me.fraImportesFactura.Controls.Add(Me.ntbFacturadoAnteriormente)
         Me.fraImportesFactura.Controls.Add(Me.lblFacturadoAnteriormente)
         Me.fraImportesFactura.Controls.Add(Me.ntbFactAntPS)
@@ -4062,7 +4060,7 @@ Public Class MntoFacturaVenta
         '
         Me.TryDataBinding(txtNFacturaOrden, New System.Windows.Forms.Binding("Text", Me, "NFacturaOrden", True))
         Me.txtNFacturaOrden.DisabledBackColor = System.Drawing.Color.White
-        Me.txtNFacturaOrden.Location = New System.Drawing.Point(239, 51)
+        Me.txtNFacturaOrden.Location = New System.Drawing.Point(156, 26)
         Me.txtNFacturaOrden.Name = "txtNFacturaOrden"
         Me.txtNFacturaOrden.Size = New System.Drawing.Size(121, 21)
         Me.txtNFacturaOrden.TabIndex = 174
@@ -4070,7 +4068,7 @@ Public Class MntoFacturaVenta
         '
         'lblNFacturaOrden
         '
-        Me.lblNFacturaOrden.Location = New System.Drawing.Point(142, 55)
+        Me.lblNFacturaOrden.Location = New System.Drawing.Point(59, 30)
         Me.lblNFacturaOrden.Name = "lblNFacturaOrden"
         Me.lblNFacturaOrden.Size = New System.Drawing.Size(91, 13)
         Me.lblNFacturaOrden.TabIndex = 175
@@ -4241,6 +4239,8 @@ Public Class MntoFacturaVenta
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.TabFacturas)
+        Me.Panel4.Controls.Add(Me.lblNFacturaOrden)
+        Me.Panel4.Controls.Add(Me.txtNFacturaOrden)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(0, 295)
         Me.Panel4.Name = "Panel4"
@@ -4368,6 +4368,7 @@ Public Class MntoFacturaVenta
         Me.fraImportesFactura.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -5335,7 +5336,7 @@ Public Class MntoFacturaVenta
         chkIVAManual.Enabled = False
         BloquearPorTicket()
         If Me.PnlRiesgo.Visible Then Me.PnlRiesgo.Visible = False
-        CalcularOrdenFact()
+        'CalcularOrdenFact()
 
         'calcularFacturadoAnteriormente()
     End Sub
