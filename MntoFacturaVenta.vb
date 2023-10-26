@@ -354,6 +354,7 @@ Public Class MntoFacturaVenta
         Me.components = New System.ComponentModel.Container
         Dim jngLineaFactura_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim jngLineaFactura_DesignTimeLayout_Reference_0 As Janus.Windows.Common.Layouts.JanusLayoutReference = New Janus.Windows.Common.Layouts.JanusLayoutReference("GridEXLayoutData.RootTable.Columns.Column8.ButtonImage")
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MntoFacturaVenta))
         Dim jngLineaFactura_DesignTimeLayout_Reference_1 As Janus.Windows.Common.Layouts.JanusLayoutReference = New Janus.Windows.Common.Layouts.JanusLayoutReference("GridEXLayoutData.RootTable.Columns.Column11.ButtonImage")
         Dim jngLineaFactura_DesignTimeLayout_Reference_2 As Janus.Windows.Common.Layouts.JanusLayoutReference = New Janus.Windows.Common.Layouts.JanusLayoutReference("GridEXLayoutData.RootTable.Columns.Column19.ButtonImage")
         Dim jngLineaFactura_DesignTimeLayout_Reference_3 As Janus.Windows.Common.Layouts.JanusLayoutReference = New Janus.Windows.Common.Layouts.JanusLayoutReference("GridEXLayoutData.RootTable.Columns.Column20.ButtonImage")
@@ -366,7 +367,6 @@ Public Class MntoFacturaVenta
         Dim jngLineaFactura_DesignTimeLayout_Reference_10 As Janus.Windows.Common.Layouts.JanusLayoutReference = New Janus.Windows.Common.Layouts.JanusLayoutReference("GridEXLayoutData.RootTable.Columns.Column46.ButtonImage")
         Dim jngLineaFactura_DesignTimeLayout_Reference_11 As Janus.Windows.Common.Layouts.JanusLayoutReference = New Janus.Windows.Common.Layouts.JanusLayoutReference("GridEXLayoutData.ImageList.ImageStream")
         Dim jngBaseImponible_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MntoFacturaVenta))
         Dim jngVencimientos_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim jngVencimientos_DesignTimeLayout_Reference_0 As Janus.Windows.Common.Layouts.JanusLayoutReference = New Janus.Windows.Common.Layouts.JanusLayoutReference("GridEXLayoutData.RootTable.Columns.Column3.ButtonImage")
         Dim cbxTipoRetencion_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
@@ -385,6 +385,7 @@ Public Class MntoFacturaVenta
         Me.TabPageBasesIVA = New Janus.Windows.UI.Tab.UITabPage
         Me.jngBaseImponible = New Solmicro.Expertis.Engine.UI.Grid
         Me.pnlInsercionManualBaseImponible = New Solmicro.Expertis.Engine.UI.Panel
+        Me.cbEdicionLineas = New Solmicro.Expertis.Engine.UI.CheckBox
         Me.chkIVAManual = New Solmicro.Expertis.Engine.UI.CheckBox
         Me.TabPageVencimientos = New Janus.Windows.UI.Tab.UITabPage
         Me.jngVencimientos = New Solmicro.Expertis.Engine.UI.Grid
@@ -673,7 +674,6 @@ Public Class MntoFacturaVenta
         Me.lbIDContador = New Solmicro.Expertis.Engine.UI.Label
         Me.fwiFecVencimiento = New Solmicro.Expertis.Engine.UI.CalendarBox
         Me.fraImportesFactura = New Solmicro.Expertis.Engine.UI.Frame
-        Me.cbEdicionLineas = New Solmicro.Expertis.Engine.UI.CheckBox
         Me.ntbFacturadoAnteriormente = New Solmicro.Expertis.Engine.UI.NumericTextBox
         Me.lblFacturadoAnteriormente = New Solmicro.Expertis.Engine.UI.Label
         Me.ntbFactAntPS = New Solmicro.Expertis.Engine.UI.NumericTextBox
@@ -957,6 +957,16 @@ Public Class MntoFacturaVenta
         Me.pnlInsercionManualBaseImponible.Name = "pnlInsercionManualBaseImponible"
         Me.pnlInsercionManualBaseImponible.Size = New System.Drawing.Size(878, 27)
         Me.pnlInsercionManualBaseImponible.TabIndex = 17
+        '
+        'cbEdicionLineas
+        '
+        Me.cbEdicionLineas.Checked = True
+        Me.cbEdicionLineas.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbEdicionLineas.Location = New System.Drawing.Point(700, 2)
+        Me.cbEdicionLineas.Name = "cbEdicionLineas"
+        Me.cbEdicionLineas.Size = New System.Drawing.Size(169, 23)
+        Me.cbEdicionLineas.TabIndex = 174
+        Me.cbEdicionLineas.Text = "Edición de lineas"
         '
         'chkIVAManual
         '
@@ -4059,14 +4069,6 @@ Public Class MntoFacturaVenta
         Me.fraImportesFactura.TabStop = False
         Me.fraImportesFactura.Text = "Importes"
         '
-        'cbEdicionLineas
-        '
-        Me.cbEdicionLineas.Location = New System.Drawing.Point(700, 2)
-        Me.cbEdicionLineas.Name = "cbEdicionLineas"
-        Me.cbEdicionLineas.Size = New System.Drawing.Size(169, 23)
-        Me.cbEdicionLineas.TabIndex = 174
-        Me.cbEdicionLineas.Text = "Edición de lineas"
-        '
         'ntbFacturadoAnteriormente
         '
         Me.TryDataBinding(ntbFacturadoAnteriormente, New System.Windows.Forms.Binding("Value", Me, "FacturadoAnteriormente", True))
@@ -5210,12 +5212,12 @@ Public Class MntoFacturaVenta
         'David V 21/02/23
         If Me.CurrentRow("Estado") = enumContabilizado.NoContabilizado Then
             If Length(Me.CurrentRow("AñoDeclaracionIva")) > 0 AndAlso Length(Me.CurrentRow("NDeclaracionIva")) > 0 Then
-                Me.cbEdicionLineas.Enabled = False
-            Else : Me.cbEdicionLineas.Enabled = True
+                Me.cbEdicionLineas.Checked = False
+            Else : Me.cbEdicionLineas.Checked = True
             End If
-        Else : Me.cbEdicionLineas.Enabled = False
+        Else : Me.cbEdicionLineas.Checked = False
         End If
-        If Me.cbEdicionLineas.Enabled AndAlso Me.cbEdicionLineas.Checked Then
+        If Me.cbEdicionLineas.Checked Then
             jngLineaFactura.AllowAddNew = InheritableBoolean.True
             jngLineaFactura.AllowEdit = InheritableBoolean.True
             jngLineaFactura.AllowDelete = InheritableBoolean.True
@@ -6365,10 +6367,31 @@ Public Class MntoFacturaVenta
 
 
             End If
+        ElseIf e.Alias = "FVTextoBancos" Then
+            Dim frm As New frmTextoBancos
+            Dim banco As String
+            Dim fvenc As DateTime
+            frm.ShowDialog()
+
+            banco = frm.banco
+            fvenc = frm.fvencimiento
+
+            Dim dt As New DataTable
+            Dim f As New Filter
+            f.Add("Banco", FilterOperator.Equal, banco)
+            dt = New BE.DataEngine().Filter("tbMaestroBancosFacturaVenta", f)
+
+            frm.Dispose()
+            frm = Nothing
+
+            Dim rp As New Report("FVTextoBancos")
+            rp.Filter.Add("idfactura", FilterOperator.Equal, Me.CurrentRow("idfactura"))
+            rp.Formulas("Texto").Text = dt.Rows(0)("Texto").ToString
+            rp.Formulas("fvenc").Text = fvenc
+            ExpertisApp.OpenReport(rp)
+            e.Cancel = True
         End If
     End Sub
-
-
 
 #End Region
 
