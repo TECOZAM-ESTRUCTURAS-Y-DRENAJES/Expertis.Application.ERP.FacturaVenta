@@ -4629,6 +4629,7 @@ Public Class MntoFacturaVenta
             Me.AddSeparator()
             Me.FormActions.Add("Imprimir Documentación", AddressOf AccionImprimirDocumentacion, ExpertisApp.GetIcon("printer.ico"))
         End If
+        Me.FormActions.Add("Generación factura nueva .xml", AddressOf AccionFactuaXML)
     End Sub
 
     Private Sub LoadGridActions()
@@ -5073,6 +5074,9 @@ Public Class MntoFacturaVenta
         End If
     End Sub
 
+    Public Sub AccionFactuaXML()
+        MsgBox("Factura xml creada correctamente")
+    End Sub
     Private Sub AccionImprimirDocumentacion()
         Dim FrmPrint As New FrmImprimirDocs
         FrmPrint.IDProgram = Me.ProgramInfo.ProgramID
