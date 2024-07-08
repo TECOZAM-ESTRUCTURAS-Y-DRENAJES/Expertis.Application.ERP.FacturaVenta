@@ -6248,12 +6248,22 @@ Public Class MntoFacturaVenta
 
             Dim rp As New Report("INFHORASFECHA")
 
+            'Dim strSelect As String = "SELECT TOP 100 PERCENT dbo.tbObraMODControl.IDObra, dbo.tbObraCabecera.NObra, dbo.tbObraCabecera.DescObra, "
+            'strSelect &= " SUM(dbo.tbObraMODControl.HorasRealMod) AS HorasTrabajadas, COUNT(dbo.tbObraMODControl.FechaInicio) AS JornadasTrabajadas"
+            'strSelect &= " FROM dbo.tbObraMODControl INNER JOIN dbo.tbObraCabecera ON dbo.tbObraMODControl.IDObra = dbo.tbObraCabecera.IDObra"
+            'strSelect &= " WHERE " & strWhere & " dbo.tbObraMODControl.FechaInicio between '" & fDesde & "' and '" & fHasta & "'"
+            'strSelect &= " GROUP BY dbo.tbObraMODControl.IDObra, dbo.tbObraCabecera.NObra, dbo.tbObraCabecera.DescObra"
+            'strSelect &= " ORDER BY dbo.tbObraCabecera.NObra"
+
+            'David Velasco 08/07/2024 CORREGIDO SOLO SALGAN HORAS PRODUCTIVAS
+
             Dim strSelect As String = "SELECT TOP 100 PERCENT dbo.tbObraMODControl.IDObra, dbo.tbObraCabecera.NObra, dbo.tbObraCabecera.DescObra, "
             strSelect &= " SUM(dbo.tbObraMODControl.HorasRealMod) AS HorasTrabajadas, COUNT(dbo.tbObraMODControl.FechaInicio) AS JornadasTrabajadas"
             strSelect &= " FROM dbo.tbObraMODControl INNER JOIN dbo.tbObraCabecera ON dbo.tbObraMODControl.IDObra = dbo.tbObraCabecera.IDObra"
-            strSelect &= " WHERE " & strWhere & " dbo.tbObraMODControl.FechaInicio between '" & fDesde & "' and '" & fHasta & "'"
+            strSelect &= " WHERE " & strWhere & " dbo.tbObraMODControl.FechaInicio between '" & fDesde & "' and '" & fHasta & "' AND (IDCategoriaProfesionalSCCP='2' or IDCategoriaProfesionalSCCP='3')"
             strSelect &= " GROUP BY dbo.tbObraMODControl.IDObra, dbo.tbObraCabecera.NObra, dbo.tbObraCabecera.DescObra"
             strSelect &= " ORDER BY dbo.tbObraCabecera.NObra"
+
             Dim filtro As New Filter
             rp.DataSource = New BE.DataEngine().Filter(strSelect, filtro)
 
