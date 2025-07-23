@@ -4625,12 +4625,24 @@ Public Class MntoFacturaVenta
         Me.FormActions.Add("Generar / Firmar / Enviar Factura Electrónicas", AddressOf AccionFacturaElectronica, ExpertisApp.GetIcon("outbox_out.ico"))
         Me.FormActions.Add("Quitar Factura Electrónica", AddressOf AccionQuitarFacturaElectronica, ExpertisApp.GetIcon("inbox_into.ico"))
         Me.FormActions.Add("Imputación de gastos", AddressOf AccionImputacion)
+        '22/7/25 dmartinez
+        Me.FormActions.Add("Generar listado facturas - vencimientos.", AddressOf GenerarListadoFacturasVenc)
+
         If mblnBodegas Then
             Me.AddSeparator()
             Me.FormActions.Add("Imprimir Documentación", AddressOf AccionImprimirDocumentacion, ExpertisApp.GetIcon("printer.ico"))
         End If
         Me.FormActions.Add("Generación factura nueva .xml", AddressOf AccionFactuaXML)
     End Sub
+
+#Region "LISTADO FACTURAS VENCIMIENTO"
+    Public Sub GenerarListadoFacturasVenc()
+
+        Dim frm As New frmFechas
+        frm.ShowDialog()
+
+    End Sub
+#End Region
 
     Private Sub LoadGridActions()
         With jngLineaFactura

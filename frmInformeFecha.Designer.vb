@@ -101,7 +101,7 @@ Partial Class frmInformeFecha
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(260, 331)
+        Me.Button2.Location = New System.Drawing.Point(248, 331)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(87, 23)
         Me.Button2.TabIndex = 102
@@ -110,7 +110,7 @@ Partial Class frmInformeFecha
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(94, 331)
+        Me.Button1.Location = New System.Drawing.Point(113, 331)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(87, 23)
         Me.Button1.TabIndex = 103

@@ -205,6 +205,7 @@
     <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
     <Reference Include="Microsoft.VisualBasic">
       <Name>Microsoft.VisualBasic</Name>
     </Reference>
@@ -299,6 +300,12 @@
     <Compile Include="frmDescontabilizar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmFechas.Designer.vb">
+      <DependentUpon>frmFechas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFechas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmImprimirDocs.Designer.vb">
       <DependentUpon>FrmImprimirDocs.vb</DependentUpon>
     </Compile>
@@ -362,6 +369,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDescontabilizar.resx">
       <DependentUpon>frmDescontabilizar.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFechas.resx">
+      <DependentUpon>frmFechas.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmImprimirDocs.resx">
