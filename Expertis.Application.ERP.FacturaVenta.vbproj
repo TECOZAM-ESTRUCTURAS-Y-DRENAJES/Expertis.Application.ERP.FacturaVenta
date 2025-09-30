@@ -57,7 +57,7 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\..\..\..\Bin\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\ExpertisNet50R2test\Bin\</OutputPath>
     <DocumentationFile>
     </DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
@@ -100,6 +100,7 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=11.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=11.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=11.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="EPPlus, Version=6.2.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL" />
     <Reference Include="Expertis.Application.ERP.CommonClasses, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
@@ -306,6 +307,12 @@
     <Compile Include="frmFechas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmGenerarCESCE.Designer.vb">
+      <DependentUpon>frmGenerarCESCE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenerarCESCE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmImprimirDocs.Designer.vb">
       <DependentUpon>FrmImprimirDocs.vb</DependentUpon>
     </Compile>
@@ -373,6 +380,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFechas.resx">
       <DependentUpon>frmFechas.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenerarCESCE.resx">
+      <DependentUpon>frmGenerarCESCE.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmImprimirDocs.resx">

@@ -1,5 +1,9 @@
 Imports Janus.Windows.GridEX
 Imports Solmicro.Expertis
+Imports Solmicro.Expertis.Engine
+Imports OfficeOpenXml
+Imports OfficeOpenXml.Style
+Imports System.Text.RegularExpressions
 
 Public Class MntoFacturaVenta
     Inherits Solmicro.Expertis.Engine.UI.SimpleMnto
@@ -4608,6 +4612,9 @@ Public Class MntoFacturaVenta
         '    Me.LblSelloContabilizado.Text = "Validada"
         'End If
         Me.AddSeparator()
+        Me.FormActions.Add("Fichero ventas CESCE", AddressOf GenerarCESCE)
+        Me.FormActions.Add("Fichero control de riesgos CESCE", AddressOf ControlRiesgosCESCE)
+        Me.AddSeparator()
         Me.FormActions.Add("Dirección de Facturación", AddressOf AccionBuscarDireccion, ExpertisApp.GetIcon("find_again.ico"))
         Me.AddSeparator()
         If Not MBlnExpertisSAAS Then Me.FormActions.Add("Trazabilidad", AddressOf AccionTrazabilidad)
@@ -6780,4 +6787,14 @@ Public Class MntoFacturaVenta
             jngLineaFactura.AllowDelete = InheritableBoolean.False
         End If
     End Sub
+
+    ' dfernandez 16/09/25 correo I. Gómez
+    Public Sub GenerarCESCE()
+        Dim frmCESCE As New frmGenerarCESCE
+        frmCESCE.ShowDialog()
+    End Sub
+
+    Public Sub ControlRiesgosCESCE()
+    End Sub
+
 End Class
